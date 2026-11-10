@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SocialVibe – Connect & Share</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ───── NAVBAR ───── -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <i class="fa-solid fa-leaf"></i>
+      <span class="brand-name">Social<span class="brand-accent">Vibe</span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="#explore"><i class="fa-solid fa-compass"></i> Explore</a></li>
+      <li><a href="#"><i class="fa-solid fa-bell"></i> Notifications <span class="badge">3</span></a></li>
+      <li><a href="#"><i class="fa-solid fa-message"></i> Messages</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search people, posts…" id="searchInput"/>
+      </div>
+      <div class="nav-profile">
+        <img src="https://i.pravatar.cc/40?img=12" alt="Profile" class="nav-avatar"/>
+        <span class="nav-username">Alex Green</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ───── HERO BANNER ───── -->
+  <div class="hero-banner">
+    <div class="hero-content">
+      <h1>Welcome to <span>SocialVibe</span></h1>
+      <p>Connect. Share. Inspire the world around you.</p>
+    </div>
+  </div>
+
+  <!-- ───── MAIN LAYOUT ───── -->
+  <div class="main-wrapper">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar left-sidebar">
+      <div class="sidebar-card profile-card">
+        <img src="https://i.pravatar.cc/80?img=12" alt="Profile" class="profile-pic"/>
+        <h3>Alex Green</h3>
+        <p class="profile-bio">Nature lover 🌿 | Traveler | Photographer</p>
+        <div class="profile-stats">
+          <div><span>128</span><small>Posts</small></div>
+          <div><span>4.2K</span><small>Followers</small></div>
+          <div><span>310</span><small>Following</small></div>
+        </div>
+        <button class="btn-edit-profile">Edit Profile</button>
+      </div>
+
+      <div class="sidebar-card">
+        <h4 class="sidebar-title"><i class="fa-solid fa-hashtag"></i> Trending Topics</h4>
+        <ul class="trending-list">
+          <li><a href="#">#NaturePhotography</a><span>12.4K posts</span></li>
+          <li><a href="#">#TravelDiaries</a><span>9.1K posts</span></li>
+          <li><a href="#">#SunsetVibes</a><span>7.8K posts</span></li>
+          <li><a href="#">#Wildlife</a><span>5.3K posts</span></li>
+          <li><a href="#">#GreenEarth</a><span>4.9K posts</span></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- FEED -->
+    <main class="feed" id="feed">
+
+      <!-- CREATE POST -->
+      <div class="create-post card">
+        <div class="create-post-header">
+          <img src="https://i.pravatar.cc/45?img=12" alt="Me" class="post-avatar"/>
+          <input type="text" placeholder="What's on your mind, Alex?" id="postText" class="post-input"/>
+        </div>
+        <div class="create-post-actions">
+          <label class="action-btn" id="imgUploadLabel">
+            <i class="fa-regular fa-image"></i> Photo
+            <input type="file" id="imgUpload" accept="image/*" hidden/>
+          </label>
+          <span class="action-btn"><i class="fa-regular fa-face-smile"></i> Feeling</span>
+          <span class="action-btn"><i class="fa-solid fa-location-dot"></i> Location</span>
+          <button class="btn-post" id="postBtn">Post</button>
+        </div>
+        <div id="imgPreviewContainer" style="display:none;">
+          <img id="imgPreview" src="" alt="Preview" class="img-preview"/>
+          <button class="remove-img" id="removeImg"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+
+      <!-- POSTS CONTAINER -->
+      <div id="postsContainer"></div>
+
+    </main>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="sidebar right-sidebar">
+      <div class="sidebar-card">
+        <h4 class="sidebar-title"><i class="fa-solid fa-user-plus"></i> People You May Know</h4>
+        <div class="suggestion-list" id="suggestions"></div>
+      </div>
+
+      <div class="sidebar-card" id="explore">
+        <h4 class="sidebar-title"><i class="fa-solid fa-images"></i> Photo Gallery</h4>
+        <div class="mini-gallery" id="miniGallery"></div>
+      </div>
+
+      <div class="sidebar-card">
+        <h4 class="sidebar-title"><i class="fa-solid fa-calendar-days"></i> Upcoming Events</h4>
+        <ul class="events-list">
+          <li><span class="event-dot red"></span><div><strong>Nature Walk</strong><small>Nov 14 • Central Park</small></div></li>
+          <li><span class="event-dot green"></span><div><strong>Photography Meetup</strong><small>Nov 18 • Downtown</small></div></li>
+          <li><span class="event-dot red"></span><div><strong>Eco Summit 2026</strong><small>Nov 22 • Online</small></div></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ───── FOOTER ───── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <i class="fa-solid fa-leaf"></i> Social<span>Vibe</span>
+      </div>
+      <p>© 2026 SocialVibe. Connect the world, one post at a time.</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Help</a> · <a href="#">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ───── LIGHTBOX ───── -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+    <img src="" alt="Full" id="lightboxImg"/>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
